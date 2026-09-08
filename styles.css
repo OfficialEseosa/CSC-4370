@@ -1,100 +1,78 @@
 /* =====================================================================
-   styles.css - external stylesheet for the Omorose Inc. about page
+   styles.css - external stylesheet for the Omorose about page
    ===================================================================== */
 
 /* ---------------------------------------------------------------------
    COLOR PALETTE
-   Six colors, used everywhere on the page. Nothing outside this list.
+   Five colors, pulled from the logo. Nothing on the page uses anything else.
 
-     Sand      #F6F1E8   warm off-white   -> page background
-     Cream     #FFFDF9   lightest tint    -> cards and raised surfaces
-     Ink       #1B2B27   deep green-black -> body text and headings
-     Moss      #2F6B52   forest green     -> section headings, links
-     Clay      #C2603D   terracotta       -> accents, rules, hover states
-     Stone     #6E7B75   muted grey-green -> captions and secondary text
+     Onyx     #0F1012   near black        -> page background
+     Slate    #1A1B1F   lifted dark grey  -> cards and surfaces
+     Bone     #EDEBE8   warm off white    -> headings and body text
+     Smoke    #8C8F96   muted grey        -> captions, secondary text
+     Rose     #9E2B3A   deep red          -> accents, links, hover states
 
    FONTS
-     Roboto Slab  - headings and the wordmark (weights 500, 700)
-     Roboto       - body copy and links       (weights 300, 400, 700)
+     Roboto Slab  - headings and the logo caption (weight 600)
+     Roboto       - body text and links           (weights 300, 400, 700)
    --------------------------------------------------------------------- */
 
 
-/* --- Page-wide defaults: Sand background, Ink text, centered column --- */
+/* --- Page-wide defaults: Onyx background, Bone text, centered column --- */
 body {
-    background-color: #F6F1E8;
-    color: #1B2B27;
+    background-color: #0F1012;
+    color: #EDEBE8;
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 17px;
-    font-weight: 400;
-    line-height: 1.75;
+    font-weight: 300;
+    line-height: 1.8;
     margin: 0 auto;
     padding: 0 24px 60px 24px;
-    max-width: 720px;
+    max-width: 680px;
 }
 
 
-/* --- Header: centered logo, wordmark, and title with a Clay rule below --- */
-.site-header {
+/* --- Header: logo centered above the page title --- */
+header {
     text-align: center;
-    padding: 60px 0 40px 0;
-    border-bottom: 1px solid #C2603D;
+    padding: 50px 0 30px 0;
 }
 
-/* Inline SVG logo mark sitting above the wordmark */
+/* Logo image, kept square with a thin Rose outline */
 .logo {
-    width: 56px;
-    height: 56px;
+    width: 150px;
+    height: 150px;
+    border: 1px solid #9E2B3A;
     display: block;
-    margin: 0 auto 16px auto;
+    margin: 0 auto;
 }
 
-/* Small spaced-out business name above the main heading */
-.wordmark {
-    margin: 0;
-    color: #C2603D;
+header h1 {
+    margin: 26px 0 0 0;
     font-family: "Roboto Slab", Georgia, serif;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 4px;
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: 6px;
     text-transform: uppercase;
 }
 
-/* Main page title */
-.site-header h1 {
-    margin: 12px 0 0 0;
-    color: #1B2B27;
-    font-family: "Roboto Slab", Georgia, serif;
-    font-size: 46px;
-    font-weight: 700;
-    line-height: 1.15;
-}
 
-/* One-line description under the title, in muted Stone */
-.subtitle {
-    margin: 12px 0 0 0;
-    color: #6E7B75;
-    font-size: 17px;
-    font-weight: 300;
-}
-
-
-/* --- Section headings: Moss green with a short Clay underline --- */
+/* --- Section headings: Bone text with a short Rose bar above --- */
 main h2 {
-    margin: 50px 0 16px 0;
-    color: #2F6B52;
+    margin: 45px 0 18px 0;
     font-family: "Roboto Slab", Georgia, serif;
-    font-size: 25px;
-    font-weight: 500;
+    font-size: 24px;
+    font-weight: 600;
 }
 
-/* The ::after pseudo-element draws the short bar under each heading */
-main h2::after {
+/* The ::before pseudo-element draws the small bar over each heading */
+main h2::before {
     content: "";
     display: block;
-    width: 44px;
-    height: 3px;
-    margin-top: 10px;
-    background-color: #C2603D;
+    width: 38px;
+    height: 2px;
+    margin-bottom: 14px;
+    background-color: #9E2B3A;
 }
 
 
@@ -103,123 +81,89 @@ p {
     margin: 0 0 20px 0;
 }
 
-/* Opening paragraph: larger and lighter than the rest */
+/* Opening paragraph: larger than the rest */
 .lead {
-    font-size: 20px;
-    font-weight: 300;
-    color: #1B2B27;
+    font-size: 21px;
+    line-height: 1.6;
 }
 
 
-/* --- Portrait: photo on a Cream card with a caption underneath --- */
+/* --- Portrait: photo on a Slate card with a caption underneath --- */
 .portrait {
-    margin: 45px 0 0 0;
+    margin: 30px 0 0 0;
+    background-color: #1A1B1F;
+    padding: 22px;
     text-align: center;
 }
 
 .portrait img {
-    width: 210px;
-    height: 260px;
+    width: 200px;
+    height: 240px;
     object-fit: cover;
-    border-radius: 4px;
-    /* Offset Clay outline instead of a plain border */
-    box-shadow: 10px 10px 0 #C2603D;
+    display: block;
+    margin: 0 auto;
 }
 
 .portrait figcaption {
-    margin-top: 26px;
-    color: #6E7B75;
-    font-size: 14px;
-    letter-spacing: 1px;
+    margin-top: 18px;
+    color: #8C8F96;
+    font-size: 13px;
+    letter-spacing: 2px;
     text-transform: uppercase;
 }
 
 
-/* --- Pull quote: indented Moss text with a thick Clay bar on the left --- */
-blockquote {
-    margin: 0 0 24px 0;
-    padding: 4px 0 4px 24px;
-    border-left: 5px solid #C2603D;
-    color: #2F6B52;
-    font-family: "Roboto Slab", Georgia, serif;
-    font-size: 21px;
-    font-weight: 500;
-    line-height: 1.55;
-}
-
-
-/* --- Social links: stacked Cream cards, one per service --- */
+/* --- Links list: laid out in a row instead of stacked bullets --- */
 .links {
     list-style: none;   /* remove the default bullets */
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.links li {
-    margin-bottom: 10px;
-}
-
-/* The whole card is the clickable link, so it is set to block */
 .links a {
     display: block;
-    background-color: #FFFDF9;
-    border: 1px solid #E4DCCC;
-    border-left: 4px solid #2F6B52;
-    border-radius: 4px;
-    padding: 14px 18px;
+    background-color: #1A1B1F;
+    color: #EDEBE8;
+    border: 1px solid #2B2C31;
+    padding: 10px 20px;
+    font-size: 15px;
+    letter-spacing: 1px;
     text-decoration: none;
 }
 
-/* Service name on the first line */
-.link-label {
-    display: block;
-    color: #2F6B52;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
-
-/* Description on the second line */
-.link-detail {
-    display: block;
-    color: #6E7B75;
-    font-size: 15px;
-}
-
-/* Hover: the card shifts right and its accent turns Clay */
+/* Hover: the box fills with Rose */
 .links a:hover {
-    border-left-color: #C2603D;
-    transform: translateX(4px);
-}
-
-.links a:hover .link-label {
-    color: #C2603D;
+    background-color: #9E2B3A;
+    border-color: #9E2B3A;
 }
 
 
-/* --- Footer: quiet closing line in Stone --- */
+/* --- Footer: quiet closing line in Smoke --- */
 footer {
-    margin-top: 60px;
-    padding-top: 22px;
-    border-top: 1px solid #E4DCCC;
+    margin-top: 55px;
+    padding-top: 20px;
+    border-top: 1px solid #1A1B1F;
     text-align: center;
 }
 
 footer p {
     margin: 0;
-    color: #6E7B75;
-    font-size: 14px;
+    color: #8C8F96;
+    font-size: 13px;
 }
 
 
-/* --- Small screens: shrink the oversized heading and the portrait --- */
+/* --- Small screens: shrink the heading and the portrait --- */
 @media (max-width: 600px) {
-    .site-header h1 {
-        font-size: 34px;
+    header h1 {
+        font-size: 30px;
     }
 
     .portrait img {
-        width: 170px;
-        height: 210px;
-        box-shadow: 7px 7px 0 #C2603D;
+        width: 160px;
+        height: 195px;
     }
 }
