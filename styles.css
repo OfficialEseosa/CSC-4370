@@ -1,27 +1,27 @@
 /* =====================================================================
-   styles.css - external stylesheet for the Omorose about page
+   styles.css - external stylesheet for the Omorose Inc. about page
    ===================================================================== */
 
 /* ---------------------------------------------------------------------
    COLOR PALETTE
-   Five colors, pulled from the logo. Nothing on the page uses anything else.
+   Five colors. Nothing on the page uses anything outside this list.
 
-     Onyx     #0F1012   near black        -> page background
-     Slate    #1A1B1F   lifted dark grey  -> cards and surfaces
-     Bone     #EDEBE8   warm off white    -> headings and body text
-     Smoke    #8C8F96   muted grey        -> captions, secondary text
-     Rose     #9E2B3A   deep red          -> accents, links, hover states
+     Porcelain  #F5F3F0   warm off white   -> page background
+     Ivory      #FFFFFF   pure white       -> cards and surfaces
+     Ink        #17181B   near black       -> headings and body text
+     Smoke      #75787F   muted grey       -> captions, secondary text
+     Rose       #9E2B3A   deep red         -> accents, links, hover states
 
    FONTS
-     Roboto Slab  - headings and the logo caption (weight 600)
-     Roboto       - body text and links           (weights 300, 400, 700)
+     Roboto Slab  - headings and the wordmark (weight 600)
+     Roboto       - body text and links       (weights 300, 400, 700)
    --------------------------------------------------------------------- */
 
 
-/* --- Page-wide defaults: Onyx background, Bone text, centered column --- */
+/* --- Page-wide defaults: Porcelain background, Ink text, centered column --- */
 body {
-    background-color: #0F1012;
-    color: #EDEBE8;
+    background-color: #F5F3F0;
+    color: #17181B;
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 17px;
     font-weight: 300;
@@ -32,23 +32,36 @@ body {
 }
 
 
-/* --- Header: logo centered above the page title --- */
+/* --- Header: round logo centered above the company name and title --- */
 header {
     text-align: center;
     padding: 50px 0 30px 0;
 }
 
-/* Logo image, kept square with a thin Rose outline */
+/* border-radius of 50% turns the square logo file into a circle */
 .logo {
     width: 150px;
     height: 150px;
-    border: 1px solid #9E2B3A;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #9E2B3A;
     display: block;
     margin: 0 auto;
 }
 
+/* Company name, small and spaced out above the title */
+.wordmark {
+    margin: 20px 0 0 0;
+    color: #9E2B3A;
+    font-family: "Roboto Slab", Georgia, serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
 header h1 {
-    margin: 26px 0 0 0;
+    margin: 6px 0 0 0;
     font-family: "Roboto Slab", Georgia, serif;
     font-size: 42px;
     font-weight: 600;
@@ -57,7 +70,7 @@ header h1 {
 }
 
 
-/* --- Section headings: Bone text with a short Rose bar above --- */
+/* --- Section headings: Ink text with a small rounded Rose bar above --- */
 main h2 {
     margin: 45px 0 18px 0;
     font-family: "Roboto Slab", Georgia, serif;
@@ -65,13 +78,14 @@ main h2 {
     font-weight: 600;
 }
 
-/* The ::before pseudo-element draws the small bar over each heading */
+/* The ::before pseudo-element draws the little bar over each heading */
 main h2::before {
     content: "";
     display: block;
     width: 38px;
-    height: 2px;
+    height: 4px;
     margin-bottom: 14px;
+    border-radius: 2px;
     background-color: #9E2B3A;
 }
 
@@ -88,32 +102,34 @@ p {
 }
 
 
-/* --- Portrait: photo on a Slate card with a caption underneath --- */
+/* --- Portrait: circular photo on a rounded Ivory card --- */
 .portrait {
     margin: 30px 0 0 0;
-    background-color: #1A1B1F;
-    padding: 22px;
+    background-color: #FFFFFF;
+    border-radius: 24px;
+    padding: 30px 22px;
     text-align: center;
 }
 
 .portrait img {
-    width: 200px;
-    height: 240px;
+    width: 190px;
+    height: 190px;
     object-fit: cover;
+    border-radius: 50%;
     display: block;
     margin: 0 auto;
 }
 
 .portrait figcaption {
     margin-top: 18px;
-    color: #8C8F96;
+    color: #75787F;
     font-size: 13px;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
 
-/* --- Links list: laid out in a row instead of stacked bullets --- */
+/* --- Links list: a row of rounded pill buttons --- */
 .links {
     list-style: none;   /* remove the default bullets */
     margin: 0;
@@ -125,19 +141,21 @@ p {
 
 .links a {
     display: block;
-    background-color: #1A1B1F;
-    color: #EDEBE8;
-    border: 1px solid #2B2C31;
-    padding: 10px 20px;
+    background-color: #FFFFFF;
+    color: #17181B;
+    border: 1px solid #E3DFDA;
+    border-radius: 999px;   /* a very large radius makes a pill shape */
+    padding: 10px 24px;
     font-size: 15px;
     letter-spacing: 1px;
     text-decoration: none;
 }
 
-/* Hover: the box fills with Rose */
+/* Hover: the pill fills with Rose */
 .links a:hover {
     background-color: #9E2B3A;
     border-color: #9E2B3A;
+    color: #FFFFFF;
 }
 
 
@@ -145,13 +163,13 @@ p {
 footer {
     margin-top: 55px;
     padding-top: 20px;
-    border-top: 1px solid #1A1B1F;
+    border-top: 1px solid #E3DFDA;
     text-align: center;
 }
 
 footer p {
     margin: 0;
-    color: #8C8F96;
+    color: #75787F;
     font-size: 13px;
 }
 
@@ -163,7 +181,7 @@ footer p {
     }
 
     .portrait img {
-        width: 160px;
-        height: 195px;
+        width: 150px;
+        height: 150px;
     }
 }
