@@ -1,0 +1,175 @@
+/* ===== styles.css - stylesheet for the About Us page ===== */
+
+/* --- Page-wide defaults: background, base font, and centered content column --- */
+body {
+    background-color: #f4f6f8;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222222;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 900px;
+    line-height: 1.6;
+}
+
+/* --- Header section: title bar at the top of the page --- */
+header {
+    background-color: #1f3a5f;
+    color: #ffffff;
+    padding: 25px 20px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 34px;
+    letter-spacing: 1px;
+}
+
+/* Small subtitle under the main heading */
+.tagline {
+    margin: 6px 0 0 0;
+    color: #cfd9e6;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* --- Profile card: headshot on the left, introduction on the right --- */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background-color: #ffffff;
+    border: 1px solid #dde3ea;
+    border-radius: 6px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* --- Images: keep them from overflowing and give them a border --- */
+img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 3px solid #1f3a5f;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Name heading inside the profile card */
+.intro h2 {
+    margin: 0;
+    color: #1f3a5f;
+    font-size: 26px;
+}
+
+/* Job title line under the name */
+.role {
+    margin: 4px 0 10px 0;
+    color: #e07b39;
+    font-weight: bold;
+}
+
+/* --- Main content area and its section headings --- */
+main {
+    margin-top: 25px;
+}
+
+main h2 {
+    color: #1f3a5f;
+    border-bottom: 2px solid #e07b39;
+    padding-bottom: 6px;
+    margin-top: 30px;
+}
+
+/* --- Paragraph styles: each paragraph type is styled differently --- */
+
+/* Intro paragraph: serif text inside the profile card */
+.para-one {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    color: #333333;
+    margin: 0;
+}
+
+/* Story paragraph: italic green text indented from the left */
+.para-two {
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    color: #2e7d32;
+    margin-left: 40px;
+}
+
+/* Call-out paragraph: monospace text in a highlighted box */
+.para-three {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 15px;
+    color: #6a1b1a;
+    background-color: #fff3e0;
+    border-left: 6px solid #e07b39;
+    padding: 12px;
+}
+
+/* --- Bulleted list of skills and interests --- */
+ul {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    padding: 15px 15px 15px 40px;
+    color: #333333;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+/* --- Contact table --- */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+table caption {
+    font-weight: bold;
+    padding-bottom: 8px;
+    color: #1f3a5f;
+    text-align: left;
+}
+
+th, td {
+    border: 1px solid #999999;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #1f3a5f;
+    color: #ffffff;
+    width: 130px;
+}
+
+/* Zebra striping: shade every other row for readability */
+tr:nth-child(even) td {
+    background-color: #eef2f7;
+}
+
+/* --- Footer: closing line at the bottom of the page --- */
+footer {
+    margin-top: 35px;
+    padding-top: 15px;
+    border-top: 1px solid #cccccc;
+    text-align: center;
+    color: #666666;
+    font-size: 14px;
+}
+
+/* --- Small screens: stack the profile card instead of sitting side by side --- */
+@media (max-width: 600px) {
+    .profile {
+        flex-direction: column;
+        text-align: center;
+    }
+}
