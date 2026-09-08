@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Document settings: character encoding, mobile scaling, and the browser tab title -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About HTML and CSS</title>
+
+    <!-- Link to the external stylesheet shared by all three pages -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER: the main heading that identifies this page -->
+    <header>
+        <h1>About HTML and CSS</h1>
+    </header>
+
+    <!-- NAVIGATION: relative links to the other two pages, separated by <br> tags -->
+    <nav>
+        <a href="index.html">Home page.</a>
+        <br>
+        <a href="features.html">Features of this webpage.</a>
+    </nav>
+
+    <!-- IMAGE: the main picture for the about page -->
+    <img src="assets/code-editor.png" alt="Code editor showing a hello world program">
+
+    <!-- PARAGRAPH 1: styled with the serif intro style from style.css -->
+    <p class="para-one">
+        Web programming starts with HTML. Every page is a set of nested elements that describe what the content is, not how it looks.
+    </p>
+
+    <!-- PARAGRAPH 2: styled with the italic, indented, green style -->
+    <p class="para-two">
+        CSS handles how it looks. A stylesheet matches elements by tag, class, or id, then sets things like font, color, spacing, and layout.
+    </p>
+
+    <!-- PARAGRAPH 3: styled as a monospace call-out box -->
+    <p class="para-three">
+        The browser puts the two together. It reads the HTML from top to bottom, builds the structure, then applies the matching style rules to each element.
+    </p>
+
+</body>
+</html>

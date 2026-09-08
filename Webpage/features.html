@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Document settings: character encoding, mobile scaling, and the browser tab title -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features</title>
+
+    <!-- Link to the external stylesheet shared by all three pages -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER: the main heading that identifies this page -->
+    <header>
+        <h1>Features of This Website</h1>
+    </header>
+
+    <!-- NAVIGATION: relative links to the other two pages, separated by <br> tags -->
+    <nav>
+        <a href="index.html">Home page.</a>
+        <br>
+        <a href="about.html">About HTML and CSS.</a>
+    </nav>
+
+    <!-- IMAGE: the main picture for the features page -->
+    <img src="assets/algorithms.png" alt="Diagram of the design, experiment, implement, analyze cycle">
+
+    <!-- PARAGRAPH 1: styled with the serif intro style from style.css -->
+    <p class="para-one">
+        Here is what this site is built from, listed below and then broken down in the table.
+    </p>
+
+    <!-- PARAGRAPH 2: styled with the italic, indented, green style -->
+    <p class="para-two">
+        Lists and tables are both ways of organizing content. A list groups related items, and a table lines up several details for each item.
+    </p>
+
+    <!-- PARAGRAPH 3: styled as a monospace call-out box -->
+    <p class="para-three">
+        The table below shows every feature, the page it appears on, and the HTML elements used to build it.
+    </p>
+
+    <!-- BULLETED LIST: an unordered list of the site's features -->
+    <h2>Feature List</h2>
+    <ul>
+        <li>Three separate pages connected by relative links</li>
+        <li>A styled header at the top of every page</li>
+        <li>An image on each page with descriptive alt text</li>
+        <li>Three paragraphs per page, each with its own font and color</li>
+        <li>A bulleted list and a data table on this page</li>
+        <li>One external stylesheet shared by all three pages</li>
+        <li>Comments in the HTML and CSS explaining each section</li>
+    </ul>
+
+    <!-- TABLE: the same features shown with extra detail in rows and columns -->
+    <h2>Feature Details</h2>
+    <table>
+        <caption>Where each feature appears and how it was built</caption>
+
+        <!-- Table head: the column labels -->
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Page</th>
+                <th>Built With</th>
+            </tr>
+        </thead>
+
+        <!-- Table body: one row per feature -->
+        <tbody>
+            <tr>
+                <td>Page header</td>
+                <td>All pages</td>
+                <td>&lt;header&gt; and &lt;h1&gt;</td>
+            </tr>
+            <tr>
+                <td>Image</td>
+                <td>All pages</td>
+                <td>&lt;img&gt; with an alt attribute</td>
+            </tr>
+            <tr>
+                <td>Styled paragraphs</td>
+                <td>All pages</td>
+                <td>&lt;p&gt; with CSS classes</td>
+            </tr>
+            <tr>
+                <td>Relative navigation</td>
+                <td>All pages</td>
+                <td>&lt;a&gt; separated by &lt;br&gt;</td>
+            </tr>
+            <tr>
+                <td>Bulleted list</td>
+                <td>Features</td>
+                <td>&lt;ul&gt; and &lt;li&gt;</td>
+            </tr>
+            <tr>
+                <td>Data table</td>
+                <td>Features</td>
+                <td>&lt;table&gt;, &lt;th&gt;, and &lt;td&gt;</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
