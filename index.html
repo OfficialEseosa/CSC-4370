@@ -4,86 +4,126 @@
     <!-- Document settings: character encoding, mobile scaling, and the browser tab title -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <title>About | Omorose Inc.</title>
 
-    <!-- Link to the external stylesheet for this page -->
+    <!-- Google Fonts: Roboto for body text, Roboto Slab for headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Roboto+Slab:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Link to the external stylesheet that holds the color palette -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- HEADER: the main heading that identifies this page -->
-    <header>
-        <h1>About Us</h1>
-        <p class="tagline">Omorose Inc.</p>
+    <!-- HEADER: logo mark, site name, and the page title -->
+    <header class="site-header">
+
+        <!-- LOGO: an inline SVG monogram, so it stays sharp at any size -->
+        <svg class="logo" viewBox="0 0 64 64" role="img" aria-label="Omorose Inc. logo">
+            <circle cx="32" cy="32" r="29" fill="none" stroke="#C2603D" stroke-width="5"/>
+            <circle cx="32" cy="32" r="11" fill="#F6F1E8"/>
+        </svg>
+
+        <p class="wordmark">Omorose Inc.</p>
+        <h1>Why I built this</h1>
+        <p class="subtitle">An about page, and the reasoning behind the whole thing.</p>
     </header>
 
-    <!-- PROFILE: the headshot and the short introduction sit side by side -->
-    <section class="profile">
-
-        <!-- IMAGE: headshot of the founder -->
-        <img src="assets/Headshot.jpg" alt="Headshot of Raphael Omorose">
-
-        <!-- INTRO: name, role, and a one-line summary -->
-        <div class="intro">
-            <h2>Raphael Omorose</h2>
-            <p class="role">Founder &amp; Computer Science Student</p>
-            <p class="para-one">
-                Welcome to Omorose Inc. I am a computer science student at Georgia State University,
-                and this page is a short introduction to who I am and what I work on.
-            </p>
-        </div>
-    </section>
-
-    <!-- MAIN CONTENT: the story and the list of interests -->
+    <!-- MAIN CONTENT: the portrait, the story, and the contact links -->
     <main>
 
-        <!-- SECTION 1: background paragraph -->
-        <h2>Our Story</h2>
-        <p class="para-two">
-            Omorose Inc. started as a place to keep the things I build while learning to program.
-            What began as small practice projects turned into a habit of finishing what I start,
-            writing it down, and sharing it.
+        <!-- PORTRAIT: photo of me with a short caption underneath -->
+        <figure class="portrait">
+            <img src="assets/Headshot.jpg" alt="Photo of Raphael Omorose">
+            <figcaption>Raphael Omorose &mdash; Computer Science, Georgia State University</figcaption>
+        </figure>
+
+        <!-- SECTION 1: the reason the site exists -->
+        <h2>The reason this exists</h2>
+
+        <p class="lead">
+            I made this site because the work I do kept disappearing. A project would get
+            finished on a Tuesday, get graded, and then sit in a folder where nobody &mdash;
+            including me &mdash; would ever look at it again.
         </p>
 
-        <!-- SECTION 2: what the work focuses on, styled as a call-out box -->
-        <h2>What We Do</h2>
-        <p class="para-three">
-            We build clean, straightforward websites and tools. No clutter, no filler &mdash;
-            just pages that load fast, read well, and do exactly what they say they do.
+        <p>
+            Omorose Inc. is the fix for that. It is one place where the things I build actually
+            live: the assignments, the side projects, the small experiments that did not go
+            anywhere but taught me something on the way. Having a place to put work changes how
+            you do the work. When you know something will be seen, you finish it properly.
         </p>
 
-        <!-- SECTION 3: bulleted list of skills and interests -->
-        <h2>Skills &amp; Interests</h2>
-        <ul>
-            <li>HTML and CSS for building and styling web pages</li>
-            <li>Java and Python for coursework and personal projects</li>
-            <li>Web programming, currently through CSC 4370</li>
-            <li>Learning how the browser turns files into a finished page</li>
+        <!-- SECTION 2: the motivation, set apart as a quote -->
+        <h2>What motivated me</h2>
+
+        <blockquote>
+            I got tired of being a person who was <em>going to</em> learn this. I wanted to be a
+            person who had built something.
+        </blockquote>
+
+        <p>
+            Honestly, the first push was frustration. Web development looked like a wall of
+            things I did not understand, and every tutorial assumed I already knew the last five.
+            It was easier to feel behind than to start.
+        </p>
+
+        <p>
+            So I started with something small enough that I could not talk myself out of it: one
+            page, one stylesheet. This page. It turns out that most of the wall is not that tall
+            once you are standing next to it. HTML is a way of naming your content, CSS is a way
+            of describing how it should look, and everything after that is a variation on those
+            two ideas.
+        </p>
+
+        <p>
+            The plan from here is straightforward. Keep building, keep putting it somewhere
+            public, and let the site grow as the skills do. If a future version of this page
+            looks nothing like this one, that is the point.
+        </p>
+
+        <!-- SECTION 3: social and contact links -->
+        <h2>Where to find me</h2>
+
+        <p>
+            The site is still small, but the door is open. These links go to the places I post
+            work and the fastest way to reach me directly.
+        </p>
+
+        <!-- LINK LIST: each link opens in a new tab -->
+        <ul class="links">
+            <li>
+                <a href="https://github.com/" target="_blank" rel="noopener">
+                    <span class="link-label">GitHub</span>
+                    <span class="link-detail">Code and project repositories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
+                    <span class="link-label">LinkedIn</span>
+                    <span class="link-detail">Background, coursework, and experience</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                    <span class="link-label">Instagram</span>
+                    <span class="link-detail">The occasional look behind the scenes</span>
+                </a>
+            </li>
+            <li>
+                <a href="mailto:raphaelomorose@gmail.com">
+                    <span class="link-label">Email</span>
+                    <span class="link-detail">raphaelomorose@gmail.com</span>
+                </a>
+            </li>
         </ul>
-
-        <!-- SECTION 4: contact information in a simple two-column table -->
-        <h2>Get In Touch</h2>
-        <table>
-            <caption>Contact Information</caption>
-            <tr>
-                <th>Email</th>
-                <td>raphaelomorose@gmail.com</td>
-            </tr>
-            <tr>
-                <th>School</th>
-                <td>Georgia State University</td>
-            </tr>
-            <tr>
-                <th>Course</th>
-                <td>CSC 4370 &mdash; Web Programming</td>
-            </tr>
-        </table>
 
     </main>
 
     <!-- FOOTER: closing line at the bottom of the page -->
     <footer>
-        <p>&copy; 2026 Omorose Inc. &mdash; Built for CSC 4370.</p>
+        <p>&copy; 2026 Omorose Inc. &mdash; Built by hand for CSC 4370.</p>
     </footer>
 
 </body>
