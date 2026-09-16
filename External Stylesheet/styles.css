@@ -15,7 +15,27 @@
    FONTS
      Roboto Slab  - headings and the wordmark (weight 600)
      Roboto       - body text and links       (weights 300, 400, 700)
+
+   LAYOUT
+     +--------------------------------------------+
+     |  logo + wordmark            nav links      |   header (flexbox)
+     +--------------+-----------------------------+
+     |              |                             |
+     |   sidebar    |        main content         |   .layout (grid)
+     |              |                             |
+     +--------------+-----------------------------+
+     |                  footer                    |
+     +--------------------------------------------+
+     Below 800px the grid collapses to one column.
    --------------------------------------------------------------------- */
+
+
+/* --- box-sizing: padding and borders count inside an element's width --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
 
 /* --- Page-wide defaults: Porcelain background, Ink text, centered column --- */
@@ -27,59 +47,127 @@ body {
     font-weight: 300;
     line-height: 1.8;
     margin: 0 auto;
-    padding: 0 24px 60px 24px;
-    max-width: 680px;
+    padding: 0 24px 40px 24px;
+    max-width: 1080px;
+}
+
+/* Smooth scrolling when a nav link jumps to a section */
+html {
+    scroll-behavior: smooth;
 }
 
 
-/* --- Header: round logo centered above the company name and title --- */
-header {
-    text-align: center;
-    padding: 50px 0 30px 0;
+/* Flex row: brand pushed to the left, nav pushed to the right */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 28px 0;
+    border-bottom: 1px solid #E3DFDA;
+}
+
+/* Logo and wordmark sit side by side */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
 }
 
 /* border-radius of 50% turns the square logo file into a circle */
 .logo {
-    width: 150px;
-    height: 150px;
+    width: 56px;
+    height: 56px;
     object-fit: cover;
     border-radius: 50%;
-    border: 3px solid #9E2B3A;
+    border: 2px solid #9E2B3A;
     display: block;
-    margin: 0 auto;
 }
 
-/* Company name, small and spaced out above the title */
+/* Company name, spaced out next to the logo */
 .wordmark {
-    margin: 20px 0 0 0;
     color: #9E2B3A;
     font-family: "Roboto Slab", Georgia, serif;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
     letter-spacing: 4px;
     text-transform: uppercase;
 }
 
-header h1 {
-    margin: 6px 0 0 0;
+/* Nav list: remove bullets and lay the links out in a row */
+.site-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 6px;
+}
+
+.site-nav a {
+    display: block;
+    padding: 6px 16px;
+    border-radius: 999px;
+    color: #17181B;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+/* Hover: the link fills with Rose */
+.site-nav a:hover {
+    background-color: #9E2B3A;
+    color: #FFFFFF;
+}
+
+
+/* Two columns: a fixed-width sidebar and a flexible content column */
+.layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-areas: "sidebar content";
+    gap: 48px;
+    align-items: start;
+    padding-top: 44px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content {
+    grid-area: content;
+}
+
+
+/* --- Page title --- */
+.content h1 {
+    margin: 0;
     font-family: "Roboto Slab", Georgia, serif;
     font-size: 42px;
     font-weight: 600;
     letter-spacing: 6px;
     text-transform: uppercase;
+    line-height: 1.2;
 }
 
 
 /* --- Section headings: Ink text with a small rounded Rose bar above --- */
-main h2 {
-    margin: 45px 0 18px 0;
+h2 {
+    margin: 36px 0 18px 0;
     font-family: "Roboto Slab", Georgia, serif;
     font-size: 24px;
     font-weight: 600;
+    line-height: 1.3;
 }
 
 /* The ::before pseudo-element draws the little bar over each heading */
-main h2::before {
+h2::before {
     content: "";
     display: block;
     width: 38px;
@@ -104,7 +192,7 @@ p {
 
 /* --- Portrait: circular photo on a rounded Ivory card --- */
 .portrait {
-    margin: 30px 0 0 0;
+    margin: 0;
     background-color: #FFFFFF;
     border-radius: 24px;
     padding: 30px 22px;
@@ -112,8 +200,8 @@ p {
 }
 
 .portrait img {
-    width: 190px;
-    height: 190px;
+    width: 170px;
+    height: 170px;
     object-fit: cover;
     border-radius: 50%;
     display: block;
@@ -124,8 +212,21 @@ p {
     margin-top: 18px;
     color: #75787F;
     font-size: 13px;
+    line-height: 1.6;
     letter-spacing: 2px;
     text-transform: uppercase;
+}
+
+/* --- Card: rounded Ivory box that holds the Find me links --- */
+.card {
+    background-color: #FFFFFF;
+    border-radius: 24px;
+    padding: 24px 22px;
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 20px;
 }
 
 
@@ -145,8 +246,8 @@ p {
     color: #17181B;
     border: 1px solid #E3DFDA;
     border-radius: 999px;   /* a very large radius makes a pill shape */
-    padding: 10px 24px;
-    font-size: 15px;
+    padding: 8px 18px;
+    font-size: 14px;
     letter-spacing: 1px;
     text-decoration: none;
 }
@@ -174,9 +275,25 @@ footer p {
 }
 
 
-/* --- Small screens: shrink the heading and the portrait --- */
+/* --- Tablets and phones: stack the grid into one column, content first --- */
+@media (max-width: 800px) {
+    .layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "content"
+            "sidebar";
+        gap: 36px;
+        padding-top: 32px;
+    }
+}
+
+/* --- Small phones: center the header and shrink the title --- */
 @media (max-width: 600px) {
-    header h1 {
+    .site-header {
+        justify-content: center;
+    }
+
+    .content h1 {
         font-size: 30px;
     }
 

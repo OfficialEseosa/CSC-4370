@@ -11,59 +11,85 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
 
-    <!-- Link to the external stylesheet that holds the color palette -->
+    <!-- Link to the external stylesheet that holds the color palette and page layout -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="top">
 
-    <!-- HEADER: logo image above the company name and page title -->
-    <header>
-        <img class="logo" src="assets/logo.jpg" alt="Omorose Inc. logo">
-        <p class="wordmark">Omorose Inc.</p>
-        <h1>About</h1>
+    <!-- HEADER: logo and company name on the left, navigation links on the right -->
+    <header class="site-header">
+        <a class="brand" href="#top">
+            <img class="logo" src="assets/logo.jpg" alt="Omorose Inc. logo">
+            <span class="wordmark">Omorose Inc.</span>
+        </a>
+
+        <!-- NAVIGATION: jump links to each part of the page -->
+        <nav class="site-nav" aria-label="Main">
+            <ul>
+                <li><a href="#top">About</a></li>
+                <li><a href="#story">Story</a></li>
+                <li><a href="#find-me">Find me</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- MAIN CONTENT: portrait, the story, and the links -->
-    <main>
+    <!-- PAGE LAYOUT: grid container holding the sidebar and the main content -->
+    <div class="layout">
 
-        <!-- PORTRAIT: photo of me with a caption underneath -->
-        <figure class="portrait">
-            <img src="assets/Headshot.jpg" alt="Photo of Raphael Omorose">
-            <figcaption>Raphael Omorose, Computer Science at Georgia State</figcaption>
-        </figure>
+        <!-- SIDEBAR: portrait and social links -->
+        <aside class="sidebar">
 
-        <!-- SECTION 1: why the site exists and what motivated it -->
-        <h2>Why I built this</h2>
+            <!-- PORTRAIT: photo of me with a caption underneath -->
+            <figure class="portrait">
+                <img src="assets/Headshot.jpg" alt="Photo of Raphael Omorose">
+                <figcaption>Raphael Omorose, Computer Science at Georgia State</figcaption>
+            </figure>
 
-        <p class="lead">
-            I built Omorose Inc. because my work kept disappearing. Projects got finished, got
-            graded, and then sat in a folder nobody opened again.
-        </p>
+            <!-- SECTION 2: social and contact links -->
+            <section class="card" id="find-me">
+                <h2>Find me</h2>
 
-        <p>
-            This site is where that work lives instead. Having somewhere to put things changes how
-            you make them. When you know something will be seen, you finish it properly.
-        </p>
+                <!-- LINK LIST: external links open in a new tab -->
+                <ul class="links">
+                    <li><a href="https://github.com/OfficialEseosa" target="_blank" rel="noopener">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/raphaelomorose" target="_blank" rel="noopener">LinkedIn</a></li>
+                    <li><a href="https://www.instagram.com/raphaelomorose" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="mailto:raphaelomorose@gmail.com">Email</a></li>
+                </ul>
+            </section>
 
-        <p>
-            The motivation was mostly frustration. Web development looked like a wall of things I
-            did not understand, and it was easier to feel behind than to start. So I started small
-            enough that I could not talk myself out of it: one page, one stylesheet. This page.
-            Most of the wall is not that tall once you are standing next to it.
-        </p>
+        </aside>
 
-        <!-- SECTION 2: social and contact links -->
-        <h2>Find me</h2>
+        <!-- MAIN CONTENT: page title and the story -->
+        <main class="content">
 
-        <!-- LINK LIST: external links open in a new tab -->
-        <ul class="links">
-            <li><a href="https://github.com/OfficialEseosa" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/raphaelomorose" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="https://www.instagram.com/raphaelomorose" target="_blank" rel="noopener">Instagram</a></li>
-            <li><a href="mailto:raphaelomorose@gmail.com">Email</a></li>
-        </ul>
+            <h1>About</h1>
 
-    </main>
+            <!-- SECTION 1: why the site exists and what motivated it -->
+            <section id="story">
+                <h2>Why I built this</h2>
+
+                <p class="lead">
+                    I built Omorose Inc. because my work kept disappearing. Projects got finished, got
+                    graded, and then sat in a folder nobody opened again.
+                </p>
+
+                <p>
+                    This site is where that work lives instead. Having somewhere to put things changes how
+                    you make them. When you know something will be seen, you finish it properly.
+                </p>
+
+                <p>
+                    The motivation was mostly frustration. Web development looked like a wall of things I
+                    did not understand, and it was easier to feel behind than to start. So I started small
+                    enough that I could not talk myself out of it: one page, one stylesheet. This page.
+                    Most of the wall is not that tall once you are standing next to it.
+                </p>
+            </section>
+
+        </main>
+
+    </div>
 
     <!-- FOOTER: closing line at the bottom of the page -->
     <footer>
