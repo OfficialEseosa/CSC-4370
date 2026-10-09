@@ -13,6 +13,9 @@
 
     <!-- Link to the external stylesheet that holds the color palette and page layout -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Dark mode script. It's up here and not at the bottom so the theme is set before the page shows -->
+    <script src="script.js"></script>
 </head>
 <body id="top">
 
@@ -23,14 +26,22 @@
             <span class="wordmark">Omorose Inc.</span>
         </a>
 
-        <!-- NAVIGATION: jump links to each part of the page -->
-        <nav class="site-nav" aria-label="Main">
-            <ul>
-                <li><a href="#top">About</a></li>
-                <li><a href="#story">Story</a></li>
-                <li><a href="#find-me">Find me</a></li>
-            </ul>
-        </nav>
+        <!-- Wrapper so the nav and the dark mode button sit together on the right -->
+        <div class="header-actions">
+
+            <!-- NAVIGATION: jump links to each part of the page -->
+            <nav class="site-nav" aria-label="Main">
+                <ul>
+                    <li><a href="#top">About</a></li>
+                    <li><a href="#story">Story</a></li>
+                    <li><a href="#find-me">Find me</a></li>
+                </ul>
+            </nav>
+
+            <!-- DARK MODE BUTTON: script.js handles the click -->
+            <button class="theme-toggle" id="theme-toggle" type="button">Dark mode</button>
+
+        </div>
     </header>
 
     <!-- PAGE LAYOUT: grid container holding the sidebar and the main content -->

@@ -5,12 +5,20 @@
 /* ---------------------------------------------------------------------
    COLOR PALETTE
    Five colors. Nothing on the page uses anything outside this list.
-
      Porcelain  #F5F3F0   warm off white   -> page background
      Ivory      #FFFFFF   pure white       -> cards and surfaces
      Ink        #17181B   near black       -> headings and body text
      Smoke      #75787F   muted grey       -> captions, secondary text
      Rose       #9E2B3A   deep red         -> accents, links, hover states
+
+   DARK MODE
+   Same five jobs, darker colors. script.js switches between the two.
+
+     Charcoal   #141517   near black       -> page background
+     Graphite   #1F2124   dark grey        -> cards and surfaces
+     Bone       #F1EEEA   warm off white   -> headings and body text
+     Ash        #A0A4AB   light grey       -> captions, secondary text
+     Blush      #E57A88   soft red         -> accents, links, hover states
 
    FONTS
      Roboto Slab  - headings and the wordmark (weight 600)
@@ -30,6 +38,37 @@
    --------------------------------------------------------------------- */
 
 
+/* --- The palette as variables, so the colors only get written once --- */
+:root {
+    --color-bg: #F5F3F0;          /* Porcelain */
+    --color-surface: #FFFFFF;     /* Ivory */
+    --color-text: #17181B;        /* Ink */
+    --color-muted: #75787F;       /* Smoke */
+    --color-accent: #9E2B3A;      /* Rose */
+    --color-on-accent: #FFFFFF;   /* text on top of Rose */
+    --color-border: #E3DFDA;      /* divider lines */
+}
+
+/* --- Dark mode: same variables with different colors.
+       Only applies when the html tag has data-theme="dark" on it --- */
+html[data-theme="dark"] {
+    --color-bg: #141517;          /* Charcoal */
+    --color-surface: #1F2124;     /* Graphite */
+    --color-text: #F1EEEA;        /* Bone */
+    --color-muted: #A0A4AB;       /* Ash */
+    --color-accent: #E57A88;      /* Blush */
+    --color-on-accent: #17181B;   /* white was hard to read on Blush */
+    --color-border: #34363B;
+}
+
+/* Fades the colors when the theme changes. script.js adds this class for a second */
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before {
+    transition: background-color 0.4s, color 0.4s, border-color 0.4s;
+}
+
+
 /* --- box-sizing: padding and borders count inside an element's width --- */
 *,
 *::before,
@@ -40,8 +79,8 @@
 
 /* --- Page-wide defaults: Porcelain background, Ink text, centered column --- */
 body {
-    background-color: #F5F3F0;
-    color: #17181B;
+    background-color: var(--color-bg);
+    color: var(--color-text);
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 17px;
     font-weight: 300;
@@ -65,7 +104,7 @@ html {
     flex-wrap: wrap;
     gap: 16px;
     padding: 28px 0;
-    border-bottom: 1px solid #E3DFDA;
+    border-bottom: 1px solid var(--color-border);
 }
 
 /* Logo and wordmark sit side by side */
@@ -82,13 +121,13 @@ html {
     height: 56px;
     object-fit: cover;
     border-radius: 50%;
-    border: 2px solid #9E2B3A;
+    border: 2px solid var(--color-accent);
     display: block;
 }
 
 /* Company name, spaced out next to the logo */
 .wordmark {
-    color: #9E2B3A;
+    color: var(--color-accent);
     font-family: "Roboto Slab", Georgia, serif;
     font-size: 15px;
     font-weight: 600;
@@ -109,7 +148,7 @@ html {
     display: block;
     padding: 6px 16px;
     border-radius: 999px;
-    color: #17181B;
+    color: var(--color-text);
     font-size: 15px;
     font-weight: 400;
     letter-spacing: 1px;
@@ -118,8 +157,37 @@ html {
 
 /* Hover: the link fills with Rose */
 .site-nav a:hover {
-    background-color: #9E2B3A;
-    color: #FFFFFF;
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+}
+
+
+/* Keeps the nav links and the dark mode button next to each other */
+.header-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* Dark mode button: pill shape like the links at the bottom */
+.theme-toggle {
+    background-color: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-family: inherit;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.theme-toggle:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-on-accent);
 }
 
 
@@ -174,7 +242,7 @@ h2::before {
     height: 4px;
     margin-bottom: 14px;
     border-radius: 2px;
-    background-color: #9E2B3A;
+    background-color: var(--color-accent);
 }
 
 
@@ -193,7 +261,7 @@ p {
 /* --- Portrait: circular photo on a rounded Ivory card --- */
 .portrait {
     margin: 0;
-    background-color: #FFFFFF;
+    background-color: var(--color-surface);
     border-radius: 24px;
     padding: 30px 22px;
     text-align: center;
@@ -210,7 +278,7 @@ p {
 
 .portrait figcaption {
     margin-top: 18px;
-    color: #75787F;
+    color: var(--color-muted);
     font-size: 13px;
     line-height: 1.6;
     letter-spacing: 2px;
@@ -219,7 +287,7 @@ p {
 
 /* --- Card: rounded Ivory box that holds the Find me links --- */
 .card {
-    background-color: #FFFFFF;
+    background-color: var(--color-surface);
     border-radius: 24px;
     padding: 24px 22px;
 }
@@ -242,9 +310,9 @@ p {
 
 .links a {
     display: block;
-    background-color: #FFFFFF;
-    color: #17181B;
-    border: 1px solid #E3DFDA;
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
     border-radius: 999px;   /* a very large radius makes a pill shape */
     padding: 8px 18px;
     font-size: 14px;
@@ -254,9 +322,9 @@ p {
 
 /* Hover: the pill fills with Rose */
 .links a:hover {
-    background-color: #9E2B3A;
-    border-color: #9E2B3A;
-    color: #FFFFFF;
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-on-accent);
 }
 
 
@@ -264,13 +332,13 @@ p {
 footer {
     margin-top: 55px;
     padding-top: 20px;
-    border-top: 1px solid #E3DFDA;
+    border-top: 1px solid var(--color-border);
     text-align: center;
 }
 
 footer p {
     margin: 0;
-    color: #75787F;
+    color: var(--color-muted);
     font-size: 13px;
 }
 
